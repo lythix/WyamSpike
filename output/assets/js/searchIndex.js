@@ -40,9 +40,23 @@ var searchModule = function() {
         tags:''
     });
 
+    a({
+        id:1,
+        title:"ILibrary",
+        content:"ILibrary",
+        description:'',
+        tags:''
+    });
+
     y({
         url:'/api/Wyam/Library',
         title:"Library",
+        description:""
+    });
+
+    y({
+        url:'/api/Wyam/ILibrary',
+        title:"ILibrary",
         description:""
     });
 

@@ -4,16 +4,8 @@ using System.Text;
 
 namespace Wyam
 {
-    public partial class Library
+    public partial class Library : ILibrary
     {
-        /// <example>
-        ///   <code>
-        ///     public double Subtract(double a, double b)
-        ///     {
-        ///         return a* b;
-        ///     }
-        ///   </code>
-        /// </example>
         /// Subtracts a double from another and returns the result
         /// Multiplies two intergers and returns the result
         /// See <see cref="Library.GetAnInt()"/> to get an Int.

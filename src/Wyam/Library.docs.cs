@@ -14,6 +14,9 @@ namespace Wyam
     /// </example>
     /// <summary>
     /// Library Class to rule them all
+    /// These examples could be in a seperate file so not to bloat the main code file.
+    /// Is there a way to decorate a method in the other file? Not sure, but somethign to investigate
+    /// Can you have a partial method? :)
     /// </summary>
     public partial class Library
     {

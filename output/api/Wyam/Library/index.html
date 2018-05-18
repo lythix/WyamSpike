@@ -140,6 +140,8 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li class="selected"><a href="/api/Wyam/Library">Library</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Wyam/ILibrary">ILibrary</a></li>
 
 
                     </ul>
@@ -173,6 +175,12 @@
 								<dt>Namespace</dt>
 								<dd><a href="/api/Wyam">Wyam</a></dd>
 											
+								<dt>Interfaces</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Wyam/ILibrary">ILibrary</a></li>								
+									</ul>
+								</dd>
 							
 								<dt>Base Types</dt>
 								<dd>
@@ -188,6 +196,8 @@
 						<div class="mermaid">
 							graph TD
 	Base0["object"]--&gt;Type
+	Interface0["ILibrary"]-.-&gt;Type
+	click Interface0 "/api/Wyam/ILibrary"
 	Type["Library"]
 class Type type-node
 
@@ -198,7 +208,7 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class Library</code></pre>
+	<pre><code>public class Library : ILibrary</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
