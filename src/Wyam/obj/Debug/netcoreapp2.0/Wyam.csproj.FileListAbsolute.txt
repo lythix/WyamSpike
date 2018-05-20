@@ -9,3 +9,14 @@ C:\Users\Stephen\source\research\Wyam\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.Asse
 C:\Users\Stephen\source\research\Wyam\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.AssemblyInfo.cs
 C:\Users\Stephen\source\research\Wyam\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.dll
 C:\Users\Stephen\source\research\Wyam\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.pdb
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\bin\Debug\netcoreapp2.0\Wyam.deps.json
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\bin\Debug\netcoreapp2.0\Wyam.runtimeconfig.json
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\bin\Debug\netcoreapp2.0\Wyam.runtimeconfig.dev.json
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\bin\Debug\netcoreapp2.0\Wyam.dll
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\bin\Debug\netcoreapp2.0\Wyam.pdb
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.csprojAssemblyReference.cache
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.csproj.CoreCompileInputs.cache
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.AssemblyInfoInputs.cache
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.AssemblyInfo.cs
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.dll
+C:\Users\Stephen\source\research\Wyam\docfx_project\src\Wyam\obj\Debug\netcoreapp2.0\Wyam.pdb
