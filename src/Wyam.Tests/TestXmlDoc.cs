@@ -12,12 +12,15 @@ namespace Wyam.Tests
 {
     public class TestXmlDoc
     {
+        // TODO: Work out how to reference Roslyn in unit test project - Running test gives following exception
+        //Could not load file or assembly 'Microsoft.CodeAnalysis.Workspaces, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+        //or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
 
         [Fact]
         public async Task XmlDoc_CheckAllAssemblies_HaveExamples()
         {
-            var helper = new Helper();
-            var allClasses = await helper.GetProjectClasses();
+            var helper = new Opinion.Opinion();
+            var allClasses = await helper.GetProjectClasses(".");
 
             foreach (var projectClass in allClasses)
             {
