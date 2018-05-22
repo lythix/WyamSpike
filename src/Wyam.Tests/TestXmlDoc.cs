@@ -2,6 +2,7 @@
 using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -11,6 +12,45 @@ namespace Wyam.Tests
 {
     public class TestXmlDoc
     {
+        // TODO: Work out how to reference Roslyn in unit test project - Running test gives following exception
+        //Could not load file or assembly 'Microsoft.CodeAnalysis.Workspaces, Version=2.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35'
+        //or one of its dependencies. The located assembly's manifest definition does not match the assembly reference. (Exception from HRESULT: 0x80131040)
+
+        [Fact]
+        public async Task XmlDoc_CheckAllAssemblies_HaveExamples()
+        {
+            var helper = new Opinion.Opinion();
+            var allClasses = await helper.GetProjectClasses(".");
+
+            foreach (var projectClass in allClasses)
+            {
+                var codeText = new StreamReader(projectClass).ReadToEnd();
+                var code = MetadataReference.CreateFromFile(typeof(object).Assembly.Location);
+
+                // Parse the C# code...
+                CSharpParseOptions parseOptions = new CSharpParseOptions()
+                    .WithKind(SourceCodeKind.Regular) // ...as representing a complete .cs file
+                    .WithLanguageVersion(LanguageVersion.Latest); // ...enabling the latest language features
+
+                // Compile the C# code...
+                CSharpCompilationOptions compileOptions =
+                    new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary) // ...to a dll
+                        .WithOptimizationLevel(OptimizationLevel.Release) // ...in Release configuration
+                        .WithAllowUnsafe(enabled: true); // ...enabling unsafe code
+
+                // Invoke the compiler...
+                CSharpCompilation compilation =
+                    CSharpCompilation.Create("TestInMemoryAssembly") // ..with some fake dll name
+                        .WithOptions(compileOptions)
+                        .AddReferences(MetadataReference.CreateFromFile(typeof(object).Assembly.Location)); // ...referencing the same mscorlib we're running on
+
+                // Parse and compile the C# code into a *.dll and *.xml file in-memory
+                var tree = CSharpSyntaxTree.ParseText(codeText, parseOptions);
+                var newCompilation = compilation.AddSyntaxTrees(tree);
+
+            }
+
+        }
         
         /// <summary>
         /// Modified example from 
