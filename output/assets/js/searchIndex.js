@@ -34,6 +34,14 @@ var searchModule = function() {
 
     a({
         id:0,
+        title:"ILibrary",
+        content:"ILibrary",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:1,
         title:"Library",
         content:"Library",
         description:'',
@@ -41,11 +49,25 @@ var searchModule = function() {
     });
 
     a({
-        id:1,
-        title:"ILibrary",
-        content:"ILibrary",
+        id:2,
+        title:"Opinion",
+        content:"Opinion",
         description:'',
         tags:''
+    });
+
+    a({
+        id:3,
+        title:"ClassVirtualizationVisitor",
+        content:"ClassVirtualizationVisitor",
+        description:'',
+        tags:''
+    });
+
+    y({
+        url:'/api/Wyam/ILibrary',
+        title:"ILibrary",
+        description:""
     });
 
     y({
@@ -55,8 +77,14 @@ var searchModule = function() {
     });
 
     y({
-        url:'/api/Wyam/ILibrary',
-        title:"ILibrary",
+        url:'/api/Opinion/Opinion',
+        title:"Opinion",
+        description:""
+    });
+
+    y({
+        url:'/api/Wyam.Tests/ClassVirtualizationVisitor',
+        title:"ClassVirtualizationVisitor",
         description:""
     });
 

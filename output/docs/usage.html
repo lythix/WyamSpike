@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
         <title>My Docs - Usage</title>
         <link href="/assets/css/mermaid.css" rel="stylesheet">
         <link href="/assets/css/highlight.css" rel="stylesheet">
-        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/assets/css/override.css" rel="stylesheet" />
+        <link href="/assets/css/override.css" rel="stylesheet">
         <script src="/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/assets/js/bootstrap.min.js"></script>        
         <script src="/assets/js/app.min.js"></script>         
@@ -75,7 +73,10 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#asp.net-core-2.x"></a><a href="#tab/aspnetcore2x/">ASP.NET Core 2.x</a></p>
+<p><a href="#asp.net-core-1.x"></a><a href="#tab/aspnetcore1x/">ASP.NET Core 1.x</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -103,6 +104,24 @@
 	</section>
 	<section class="content">
 		<p>To use this library, take these steps...</p>
+<h2 id="how-to-add-providers">How to add providers</h2>
+<h1 id="asp.net-core-2.x"><a href="#tab/aspnetcore2x/">ASP.NET Core 2.x</a></h1>
+<p>A logging provider takes the messages that you create with an <code>ILogger</code> object and displays or stores them. For example, the Console provider displays messages on the console, and the Azure App Service provider can store them in Azure blob storage.</p>
+<p>To use a provider, call the provider's <code>Add&lt;ProviderName&gt;</code> extension method in <em>Program.cs</em>:</p>
+<p>[!code-csharp<a href="index/sample2/Program.cs?name=snippet_ExpandDefault&amp;highlight=16,17"></a>]</p>
+<p>The default project template enables logging with the <a href="/dotnet/api/microsoft.aspnetcore.webhost.createdefaultbuilder?view=aspnetcore-2.0#Microsoft_AspNetCore_WebHost_CreateDefaultBuilder_System_String___">CreateDefaultBuilder</a> method:</p>
+<p>[!code-csharp<a href="index/sample2/Program.cs?name=snippet_TemplateCode&amp;highlight=7"></a>]</p>
+<h1 id="asp.net-core-1.x"><a href="#tab/aspnetcore1x/">ASP.NET Core 1.x</a></h1>
+<p>A logging provider takes the messages that you create with an <code>ILogger</code> object and displays or stores them. For example, the Console provider displays messages on the console, and the Azure App Service provider can store them in Azure blob storage.</p>
+<p>To use a provider, install its NuGet package and call the provider's extension method on an instance of <code>ILoggerFactory</code>, as shown in the following example.</p>
+<p>[!code-csharp<a href="index/sample//Startup.cs?name=snippet_AddConsoleAndDebug&amp;highlight=3,5-7"></a>]</p>
+<p>ASP.NET Core <a href="xref:fundamentals/dependency-injection">dependency injection</a> (DI) provides the <code>ILoggerFactory</code> instance. The <code>AddConsole</code> and <code>AddDebug</code> extension methods are defined in the <a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging.Console/">Microsoft.Extensions.Logging.Console</a> and <a href="https://www.nuget.org/packages/Microsoft.Extensions.Logging.Debug/">Microsoft.Extensions.Logging.Debug</a> packages. Each extension method calls the <code>ILoggerFactory.AddProvider</code> method, passing in an instance of the provider.</p>
+<blockquote class="blockquote">
+<p>[!NOTE]
+The sample application for this article adds logging providers in the <code>Configure</code> method of the <code>Startup</code> class. If you want to get log output from code that executes earlier, add logging providers in the <code>Startup</code> class constructor instead.</p>
+</blockquote>
+<hr>
+<p>You'll find information about each <a href="#built-in-logging-providers">built-in logging provider</a> and links to <a href="#third-party-logging-providers">third-party logging providers</a> later in the article.</p>
 
 	</section>
                 
@@ -158,5 +177,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
