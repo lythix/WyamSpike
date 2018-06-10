@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
+using Opinion;
 using Xunit;
 
 namespace Wyam.Tests
@@ -119,6 +120,16 @@ namespace Wyam.Tests
             xmlStream.Seek(0, SeekOrigin.Begin);
             return XDocument.Load(xmlStream);
             //return (AssemblyDefinition.ReadAssembly(peStream), XDocument.Load(xmlStream));
+        }
+
+        [Fact]
+        public void Library_ParseXmlDoc_ReturnTreeText()
+        {
+            var obj = new Opinion.Opinion();
+
+            Assert.NotNull(obj);
+
+
         }
     }
 }
